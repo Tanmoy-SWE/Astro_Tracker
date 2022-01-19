@@ -13,10 +13,10 @@ def marsPhotos(request):
     images = response['photos']
     size = len(images)
     nasa_photos = []
-    if (size >= 10):
-        for i in range(10):
-            nasa_photos.append(images[i]['img_src'])
-    else:
-        for i in size:
-            nasa_photos.append(images[i]['img_src'])
+    # if (size >= 10):
+    #     for i in range(10):
+    #         nasa_photos.append(images[i]['img_src'])
+    # else:
+    for i in range(size):
+        nasa_photos.append(images[i]['img_src'])
     return render(request, 'marsPhotos.html', {'nasa_photos': nasa_photos})
